@@ -1,0 +1,38 @@
+ body {
+            margin: 0;
+            background-color: #f8f9fa;
+        }
+       
+
+        .navbar {
+            padding: 12px 20px;
+            background-color: #0F2D3A;
+            box-shadow: 0 2px 8px rgba(68, 5, 5, 0);
+        }
+
+        .logo {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 10px;
+        }
+
+        .company-name {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #F0F2F3;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            margin: 0 10px;
+            color: #E3E2E3;
+        }
+
+        .navbar-nav .nav-link.active {
+            color: white;
+        }
+        .search-box {
+            width: 220px;
+        }
