@@ -47,25 +47,26 @@
                 
             <!-- Search Form -->
            
+            <div class="d-flex justify-content-center justify-content-lg-end mt-3 mt-lg-0">
                 <div class="search-container">
-
+            
+                    <i class="bi bi-search search-icon"></i>
+            
                     <input
                         type="text"
                         class="search-input"
                         placeholder="Enter a destination or keyword">
-                
-                    
-                    <i class="bi bi-search search-icon"></i>
-                <button type="button" class="btn btn-search">
+            
+                    <button id="btnSearch" class="btn btn-search">
                         Search
                     </button>
-                
-                    <button type="reset" class="btn btn-clear">
+            
+                    <button class="btn btn-clear">
                         Clear
                     </button>
-                
+            
                 </div>
-   
+            </div>
 
          
             </div>
@@ -73,7 +74,7 @@
         </div>
     </nav>
 <div class="container-fluid p-0">
-<section class="hero">
+<section class="intro">
 
     <!-- Social Icons -->
 
@@ -86,14 +87,14 @@
 
     <!-- Content -->
 
-    <div class="hero-content">
+    <div class="intro-content">
 
-        <h1 class="hero-title">
+        <h1 class="intro-title">
             EXPLORE DREAM<br>
             DESTINATION
         </h1>
 
-        <div class="hero-description">
+        <div class="intro-description">
             The Travel Recommendation App helps users explore popular travel destinations through an interactive and user-friendly interface.It allows users to search for
             beaches, temples, countries, or specific country names to view related cities along with images and descriptions. The app dynamically fetches data from a structured
             JSON file to display relevant results. It provides a simple and
@@ -111,6 +112,6 @@
     </div>
    <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
-
+<script src="./travel_recommendation.js"></script>
 </body>
 </html>

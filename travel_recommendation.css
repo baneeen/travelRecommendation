@@ -41,27 +41,39 @@ body{
 }
 
 
-.hero{
-    width: 100%;
-    min-height: 100vh;
+.intro{
+    min-height:100vh;
+    width:100%;
+    position:relative;
 
-    background: linear-gradient(rgba(0,0,0,.35), rgba(0,0,0,.35)),
-                url("/travelRecommendation/background.jpg") center center / cover no-repeat;
+    display:flex;
+    align-items:center;
 
-    position: relative;
+    background:
+    linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.35)),
+    url("/travelRecommendation/background.jpg") center center/cover no-repeat;
 }
 
 /* Social Icons */
 
 .social-icons{
+
     position:absolute;
+
     left:25px;
+
     top:50%;
+
     transform:translateY(-50%);
+
     display:flex;
+
     flex-direction:column;
-    gap:22px;
-    
+
+    gap:20px;
+
+    z-index:5;
+
 }
 
 .social-icons a{
@@ -77,31 +89,40 @@ body{
 
 /* Content */
 
-.hero-content{
-    position:absolute;
-    top:50%;
-    left:140px;
-    transform:translateY(-50%);
-    color:white;
-    width:800px;
+.intro-content{
+
+    position:relative;
+    z-index:2;
+
+    width:100%;
+    max-width:700px;
+
+    margin-left:8%;
+    margin-right:20px;
+
+    color:#fff;
+
+    padding:30px 0;
 }
 
-.hero-title{
-    font-size:64px;
+.intro-title{
+    font-size:clamp(2.4rem,6vw,4.5rem);
     font-weight:800;
-    line-height:1.05;
-    margin-bottom:35px;
+    line-height:1.1;
+    margin-bottom:25px;
 }
 
-.hero-description{
-        max-width: 800px;
-        width: 100%;
-        padding: 10px;
-        border-radius: 8px;
-        color: white;
-        line-height: 1.8;
-}
+.intro-description{
 
+    width:100%;
+    max-width:650px;
+
+    line-height:1.8;
+
+    font-size:1rem;
+
+    margin-bottom:25px;
+}
 .btn-book{
     background:#18a999;
     color:white;
@@ -115,14 +136,20 @@ body{
     background:#0f8b7c;
 }
 
-.search-container {
-    display: flex;
-    align-items: center;
-    background: #fff;
-    border-radius: 30px;
-    padding: 5px 8px;
-    width: 500px;
-    height: 48px;
+.search-container{
+
+    display:flex;
+    align-items:center;
+
+    width:100%;
+    max-width:500px;
+
+    background:#fff;
+
+    border-radius:30px;
+
+    padding:5px 8px;
+
 }
 
 .search-icon {
@@ -131,11 +158,15 @@ body{
     margin: 0 10px;
 }
 
-.search-input {
-    flex: 1;
-    border: none;
-    outline: none;
-    font-size: 15px;
+.search-input{
+
+    flex:1;
+
+    min-width:0;
+
+    border:none;
+    outline:none;
+
 }
 
 .search-input::placeholder {
@@ -158,3 +189,134 @@ body{
 .btn-clear:hover {
     background: #138b7d;
 }
+
+@media (max-width:992px){
+
+    .navbar-nav{
+    
+        text-align:center;
+        margin:20px 0;
+    
+    }
+    
+    .search-container{
+    
+        margin:20px auto;
+        max-width:100%;
+    
+    }
+    
+    .intro-content{
+    
+        margin:0 auto;
+        padding:80px 30px;
+        text-align:center;
+    
+    }
+    
+    .intro-description{
+    
+        margin:auto;
+        margin-bottom:30px;
+    
+    }
+    
+    .social-icons{
+    
+        left:15px;
+    
+    }
+    
+    }
+
+    @media (max-width:768px){
+
+        .intro{
+        
+            justify-content:center;
+        
+        }
+        
+        .intro-content{
+        
+            padding:60px 20px;
+        
+        }
+        
+        .search-container{
+        
+            flex-wrap:wrap;
+        
+            height:auto;
+        
+            border-radius:15px;
+        
+            padding:15px;
+        
+            gap:10px;
+        
+        }
+        
+        .search-icon{
+        
+            display:none;
+        
+        }
+        
+        .search-input{
+        
+            width:100%;
+        
+        }
+        
+        .btn-search,
+        .btn-clear{
+        
+            flex:1;
+        
+            margin:0;
+        
+        }
+        
+        .social-icons{
+        
+            display:none;
+        
+        }
+        
+        }
+
+        @media (max-width:576px){
+
+            .company-name{
+            
+                font-size:1.1rem;
+            
+            }
+            
+            .logo{
+            
+                width:38px;
+                height:38px;
+            
+            }
+            
+            .intro-title{
+            
+                font-size:2rem;
+            
+            }
+            
+            .intro-description{
+            
+                font-size:.9rem;
+            
+            }
+            
+            .btn-book{
+            
+                width:100%;
+            
+            }
+            
+            }
