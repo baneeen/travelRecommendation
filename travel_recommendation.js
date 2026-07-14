@@ -1,7 +1,8 @@
 const btnSearch = document.getElementById('btnSearch');
-
+const introDiv = document.getElementById('intro-content');
 function search(){
-  fetch('travel_recommendation_api.json')
+    introDiv.style.display = "none";
+    fetch('travel_recommendation_api.json')
 		  .then(response => response.json())
 		  .then(data => {
             console.log(data);
