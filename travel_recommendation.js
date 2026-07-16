@@ -11,7 +11,7 @@ const keywords = {
 
 function search(){
     introDiv.style.display = "none";
-    searchDiv.innerHTML = "";
+    searchDiv.innerHTML = '';
     const input = serachInput.value.trim().toLowerCase();
 
     fetch('travel_recommendation_api.json')
@@ -21,31 +21,13 @@ function search(){
 
             const matchedTerm = findMatch(input);
 
-            const result = data.find(item => item.toLowerCase() === matchedTerm);
-            
+            const result = data[matchedTerm];
             
 
             if (result){
-                searchDiv.innerHTML = `
-            <div class="search-title">
-            <h1>Search Results</h1>
-        </div>
-        `;
-                result.forEach(term => {
-
-                    searchDiv.innerHTML += `
-                        <div class="result-card">
-            
-                            <img src="${term.imageUrl}" alt="${term.name}">
-            
-                            <h3>${term.name}</h3>
-            
-                            <p>${term.description}</p>
-            
-                        </div>
-                    `;
-            
-                });
+                console.log("inside result");
+                searchDiv.innerHTML = `xx`;
+              
             }
           })
 		  .catch(error => {
@@ -59,13 +41,14 @@ function findMatch(input){
     let matched = null;
 
     for (const [key, values] of Object.entries(keywords)) {
+     
         if (values.includes(input)) {
             matched = key;
             break;
         }
-        console.log("matched"+matched)
+    }
     return matched;
-}
+
 }
 
 function clear(){
