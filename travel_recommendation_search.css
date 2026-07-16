@@ -1,8 +1,27 @@
+.hidden{
+    display:none !important;
+}
+
 .search-result{
 
+    display:none;
+
+    width:100%;
+
+}
+
+.search-result.show{
+
+    display:block;
+
+}
+
+.results-container{
+
     display:flex;
-    gap:20px;
     flex-wrap:wrap;
+    gap:20px;
+    width: auto;
 
 }
 .search-title{
@@ -14,17 +33,10 @@
 }
 
 .result-card{
-
-    width:220px;
-
-    background:white;
-
-    border:2px solid red;
-
-    border-radius:5px;
-
-    overflow:hidden;
-
+    flex: 0 0 calc(50% - 12.5px);
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 .result-card img{
@@ -49,5 +61,12 @@
     margin:8px;
     font-size:14px;
     text-align:center;
+    color: black;
 
+}
+
+@media (max-width: 768px){
+    .result-card{
+        flex: 0 0 100%;
+    }
 }

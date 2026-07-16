@@ -10,10 +10,11 @@ const keywords = {
 };
 
 function search(){
-    introDiv.style.display = "none";
-    searchDiv.innerHTML = '';
+    introDiv.classList.add("hidden");
+    searchDiv.classList.add("show");
+    searchDiv.innerHTML='';
     const input = serachInput.value.trim().toLowerCase();
-
+ 
     fetch('travel_recommendation_api.json')
 		  .then(response => response.json())
 		  .then(data => {
@@ -22,19 +23,67 @@ function search(){
             const matchedTerm = findMatch(input);
 
             const result = data[matchedTerm];
-            
+           
 
             if (result){
                 console.log("inside result");
-                searchDiv.innerHTML = `xx`;
-              
-            }
+                searchDiv.innerHTML = `
+                    <div class="search-title">
+                        <h1>Search Results</h1>
+                    </div>
+
+                    <div class="results-container">
+
+                    </div>
+                `;
+
+                const container = searchDiv.querySelector(".results-container");
+                if ( matchedTerm == "beaches" || matchedTerm == "temples")
+                    {  result.forEach(term => {
+
+                        container.innerHTML += `
+                                <div class="result-card">
+                    
+                                    <img src="${term.imageUrl}" alt="${term.name}">
+                    
+                                    <h3>${term.name}</h3>
+                    
+                                    <p>${term.description}</p>
+                    
+                                </div>
+                            `;
+                    
+                        });
+                     
+                    } else if (matchedTerm == "countries")
+                        {
+                            result.forEach(country => {
+
+                                country.cities.forEach(term => {
+
+                                container.innerHTML += `
+                                        <div class="result-card">
+                            
+                                            <img src="${term.imageUrl}" alt="${term.name}">
+                            
+                                            <h3>${term.name}</h3>
+                            
+                                            <p>${term.description}</p>
+                            
+                                        </div>
+                                    `;
+                            
+                                } )}); 
+                        }
+          
+                }
+
           })
 		  .catch(error => {
 			console.error('Error:', error);
 		  });  
 
-    searchDiv.style.display  =  "block";
+   
 }
 
 function findMatch(input){
@@ -52,10 +101,10 @@ function findMatch(input){
 }
 
 function clear(){
-    searchDiv.innerHTML = "";
-    searchDiv.style.display  =  "none";
-    introDiv.style.display =  "block";
+    introDiv.classList.remove("hidden");
+    searchDiv.classList.remove("show");
     
+    searchDiv.innerHTML='';
     serachInput.value = "";
 
 }
