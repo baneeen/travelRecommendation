@@ -7,10 +7,12 @@
 body{
     font-family:Arial, Helvetica, sans-serif;
 }
-    
 
-.navbar {
-    padding: 12px 20px;
+.navbar{
+    position:relative;
+    z-index:9999;
+
+    padding:12px 20px;
     background-color: #0F2D3A;
     box-shadow: 0 2px 8px rgba(68, 5, 5, 0);
 }
@@ -74,8 +76,9 @@ body{
 
     gap:20px;
 
-    z-index:5;
-
+   
+    z-index:2;
+   
 }
 
 .social-icons a{

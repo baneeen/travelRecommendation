@@ -9,6 +9,7 @@
         }
 
         .about-section{
+            position:relative;
             width:100%;
             min-height:100vh;
             display:flex;
@@ -22,8 +23,11 @@
             position:absolute;
             inset:0;
             background:rgba(0,0,0,.35);
+        
+            z-index:0;
+        
+            pointer-events:none;   /* IMPORTANT */
         }
-
         .content{
             position:relative;
             z-index:2;
