@@ -18,15 +18,13 @@ function search(){
     fetch('travel_recommendation_api.json')
 		  .then(response => response.json())
 		  .then(data => {
-            console.log(data);
-
+         
             const matchedTerm = findMatch(input);
 
             const result = data[matchedTerm];
            
 
             if (result){
-                console.log("inside result");
                 searchDiv.innerHTML = `
                     <div class="search-title">
                         <h1>Search Results</h1>
